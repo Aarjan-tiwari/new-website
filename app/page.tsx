@@ -143,7 +143,7 @@ export default function Page() {
                 <ProjectDetailModal
                   title="Amazon Web Scraper Project – Complete Detailed Explanation"
                   description="Python-based automation that scrapes Amazon product pages to monitor prices in real time, storing a historical CSV for trend analysis and decision-making."
-                  image="/images/hero-bg.jpg"
+                  image="/images/amazon%20web%20scrapper.png"
                   link="https://github.com/aarjan-tiwari"
                   tags={["Python", "Web Scraping", "BeautifulSoup", "Requests", "Pandas", "Automation", "CSV"]}
                   details={[
@@ -162,7 +162,7 @@ export default function Page() {
                   <ProjectCard
                     title="Amazon Web Scraper Project"
                     description="Scrapes Amazon product details and maintains a historical price CSV for analysis, alerts, and research."
-                    image="/images/hero-bg.jpg"
+                    image="/images/amazon%20web%20scrapper.png"
                     link="https://github.com/aarjan-tiwari"
                     tags={["Python", "Web Scraping", "BeautifulSoup", "Requests", "Pandas", "Automation", "CSV"]}
                   />

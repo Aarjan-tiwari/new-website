@@ -87,14 +87,15 @@ export default function EducationCertification() {
               }
             }}
           />
-        </div>
-        <div
-          className="absolute inset-0 bg-black/5 opacity-0 hover:opacity-100 transition-opacity cursor-pointer flex items-center justify-center"
-          onClick={() => {
-            window.open(cert.image, "_blank")
-          }}
-        >
-          <span className="text-xs bg-black/70 text-white px-2 py-1 rounded-full">Click to view</span>
+          <div
+            className="absolute inset-0 bg-black/5 opacity-0 hover:opacity-100 transition-opacity cursor-pointer flex items-center justify-center"
+            onClick={() => {
+              const base = process.env.NODE_ENV === 'production' ? '/new-website' : ''
+              window.open(`${base}${cert.image}`, "_blank")
+            }}
+          >
+            <span className="text-xs bg-black/70 text-white px-2 py-1 rounded-full">Click to view</span>
+          </div>
         </div>
         <div className="space-y-1 sm:space-y-2">
           <h3 className="text-xs sm:text-sm font-semibold line-clamp-2">{cert.title}</h3>
@@ -142,7 +143,7 @@ export default function EducationCertification() {
                 >
                   <div className="flex gap-4">
                     <div className="mt-1 flex-shrink-0">
-                      <div className="aspect-square">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14">
                         <div className="relative w-full h-full overflow-hidden rounded-md border bg-white">
                           <img
                             src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/education/koi-logo.png`}
@@ -178,7 +179,7 @@ export default function EducationCertification() {
                 >
                   <div className="flex gap-4">
                     <div className="mt-1 flex-shrink-0">
-                      <div className="aspect-square">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14">
                         <div className="relative w-full h-full overflow-hidden rounded-md border bg-white">
                           <img
                             src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/education/lumbini-logo.jpeg`}

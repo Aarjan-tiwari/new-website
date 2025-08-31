@@ -6,21 +6,22 @@ import Link from "next/link"
 export default function HeroSection() {
   return (
     <div className="flex flex-col items-center justify-center space-y-6 sm:space-y-8 text-center">
-      <div
-        className="relative aspect-ratio-container rounded-full overflow-hidden border-4 border-primary/20 shadow-lg w-[clamp(8rem,25vw,10rem)] h-[clamp(8rem,25vw,10rem)]"
-      >
-        <img
-          src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/placeholder-user.jpg`}
-          alt="Aarjan Tiwari"
-          className="w-full h-full object-cover object-center"
-          loading="eager"
-          onError={(e) => {
-            // Fallback to placeholder if image fails to load
-            if (e.currentTarget.src !== '/placeholder.svg') {
-              e.currentTarget.src = '/placeholder.svg';
-            }
-          }}
-        />
+      {/* Facebook-like circular avatar with ring and padding */}
+      <div className="relative rounded-full bg-background p-1 ring-2 ring-white dark:ring-neutral-800 shadow-md w-[clamp(8rem,25vw,10rem)] h-[clamp(8rem,25vw,10rem)]">
+        <div className="aspect-square rounded-full overflow-hidden w-full h-full">
+          <img
+            src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/profile.jpg`}
+            alt="Aarjan Tiwari"
+            className="w-full h-full object-cover object-top"
+            loading="eager"
+            onError={(e) => {
+              // Fallback to placeholder if image fails to load
+              if (e.currentTarget.src !== '/placeholder.svg') {
+                e.currentTarget.src = '/placeholder.svg';
+              }
+            }}
+          />
+        </div>
       </div>
       <div className="space-y-3 sm:space-y-4">
         <h1 className="text-fluid-3xl font-bold tracking-tighter">Aarjan Tiwari</h1>
