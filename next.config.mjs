@@ -14,18 +14,12 @@ const nextConfig = {
   },
   // Disable server actions for static export
   experimental: {
-    serverActions: {
-      bodySizeLimit: '2mb',
-    },
+    serverActions: false,
   },
   // Generate index.html in the root of the output directory
   distDir: 'docs',
   // Ensure the export includes an index.html in the root
-  trailingSlash: true,
-  // Disable server components for static export
-  experimental: {
-    serverComponents: false,
-  },
+  trailingSlash: true
 }
 
 export default nextConfig
