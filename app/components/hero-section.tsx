@@ -10,9 +10,9 @@ export default function HeroSection() {
         className="relative aspect-ratio-container rounded-full overflow-hidden border-4 border-primary/20 shadow-lg w-[clamp(8rem,25vw,10rem)] h-[clamp(8rem,25vw,10rem)]"
       >
         <img
-          src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/hero-bg.jpg`}
+          src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/placeholder-user.jpg`}
           alt="Aarjan Tiwari"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
           loading="eager"
           onError={(e) => {
             // Fallback to placeholder if image fails to load

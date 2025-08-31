@@ -17,16 +17,11 @@ async function generateFavicon() {
       return;
     }
 
-    // Create different sizes of favicons
+    // Create different sizes of favicons (PNG only) with circular mask
     const sizes = [16, 32, 48, 64, 128, 192, 256, 512];
     const pngPromises = [];
     
     try {
-      console.log('🔄 Generating favicon.ico...');
-      await sharp(inputPath)
-        .resize(64, 64, { fit: 'cover' })
-        .toFile(path.join(outputDir, 'favicon.ico'));
-      
       // Generate PNG files for different sizes
       for (const size of sizes) {
         console.log(`🔄 Generating favicon-${size}x${size}.png...`);
@@ -36,7 +31,7 @@ async function generateFavicon() {
             .composite([{
               input: Buffer.from(
                 `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="${size/2}" cy="${size/2}" r="${size/2}" fill="none" stroke="none" />
+                  <circle cx="${size/2}" cy="${size/2}" r="${size/2}" fill="black" />
                 </svg>`
               ),
               blend: 'dest-in'
@@ -54,7 +49,7 @@ async function generateFavicon() {
           .composite([{
             input: Buffer.from(
               '<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">' +
-              '<circle cx="90" cy="90" r="90" fill="none" stroke="none" />' +
+              '<circle cx="90" cy="90" r="90" fill="black" />' +
               '</svg>'
             ),
             blend: 'dest-in'

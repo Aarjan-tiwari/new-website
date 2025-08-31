@@ -46,12 +46,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const base = process.env.NODE_ENV === 'production' ? '/new-website' : ''
   return (
     <html lang="en" suppressHydrationWarning className="h-full">
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        {/* Explicit favicon links to ensure reliable loading across browsers */}
+        <link rel="icon" href={`${base}/favicon.ico`} sizes="any" />
+        <link rel="icon" type="image/png" sizes="16x16" href={`${base}/favicon-16x16.png`} />
+        <link rel="icon" type="image/png" sizes="32x32" href={`${base}/favicon-32x32.png`} />
+        <link rel="icon" type="image/png" sizes="48x48" href={`${base}/favicon-48x48.png`} />
+        <link rel="icon" type="image/png" sizes="64x64" href={`${base}/favicon-64x64.png`} />
+        <link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
       </head>
       <body className={cn("min-h-screen w-full bg-background font-sans antialiased", inter.className)}>
         <ResponsiveViewport />
