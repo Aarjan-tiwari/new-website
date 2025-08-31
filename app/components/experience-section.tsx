@@ -17,10 +17,16 @@ function ExperienceCard({ title, company, period, location, description, logo }:
         <div className="flex-shrink-0 w-14 h-14">
           <div className="relative w-full h-full overflow-hidden rounded-md border bg-white p-1">
             <img
-              src={logo || "/placeholder.svg"}
+              src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}${logo || "/placeholder.svg"}`}
               alt={`${company} logo`}
               className="w-full h-full object-contain"
               loading="lazy"
+              onError={(e) => {
+                // Fallback to placeholder if image fails to load
+                if (e.currentTarget.src !== '/placeholder.svg') {
+                  e.currentTarget.src = '/placeholder.svg';
+                }
+              }}
             />
           </div>
         </div>

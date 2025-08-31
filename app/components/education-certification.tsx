@@ -76,10 +76,16 @@ export default function EducationCertification() {
       <div className="space-y-2 sm:space-y-3">
         <div className="relative w-full">
           <img
-            src={cert.image || "/placeholder.svg"}
+            src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}${cert.image || "/placeholder.svg"}`}
             alt={cert.title}
             className="w-full h-auto max-h-[300px] object-contain mx-auto"
             loading="lazy"
+            onError={(e) => {
+              // Fallback to placeholder if image fails to load
+              if (e.currentTarget.src !== '/placeholder.svg') {
+                e.currentTarget.src = '/placeholder.svg';
+              }
+            }}
           />
         </div>
         <div
@@ -139,10 +145,16 @@ export default function EducationCertification() {
                       <div className="aspect-ratio-container" style={{ paddingBottom: "100%" }}>
                         <div className="relative w-full h-full overflow-hidden rounded-md border bg-white">
                           <img
-                            src="/images/education/koi-logo.png"
+                            src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/education/koi-logo.png`}
                             alt="King's Own Institute logo"
                             className="w-full h-full object-contain p-1"
                             loading="lazy"
+                            onError={(e) => {
+                              // Fallback to placeholder if image fails to load
+                              if (e.currentTarget.src !== '/placeholder.svg') {
+                                e.currentTarget.src = '/placeholder.svg';
+                              }
+                            }}
                           />
                         </div>
                       </div>
@@ -169,10 +181,16 @@ export default function EducationCertification() {
                       <div className="aspect-ratio-container" style={{ paddingBottom: "100%" }}>
                         <div className="relative w-full h-full overflow-hidden rounded-md border bg-white">
                           <img
-                            src="/images/education/lumbini-logo.jpeg"
+                            src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/education/lumbini-logo.jpeg`}
                             alt="Lumbini Banijya Campus logo"
                             className="w-full h-full object-contain p-1"
                             loading="lazy"
+                            onError={(e) => {
+                              // Fallback to placeholder if image fails to load
+                              if (e.currentTarget.src !== '/placeholder.svg') {
+                                e.currentTarget.src = '/placeholder.svg';
+                              }
+                            }}
                           />
                         </div>
                       </div>

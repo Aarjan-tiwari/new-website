@@ -11,10 +11,16 @@ export default function HeroSection() {
         style={{ width: "clamp(8rem, 25vw, 10rem)", height: "clamp(8rem, 25vw, 10rem)" }}
       >
         <img
-          src="/images/hero-bg.jpg"
+          src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/hero-bg.jpg`}
           alt="Aarjan Tiwari"
           className="w-full h-full object-cover"
           loading="eager"
+          onError={(e) => {
+            // Fallback to placeholder if image fails to load
+            if (e.currentTarget.src !== '/placeholder.svg') {
+              e.currentTarget.src = '/placeholder.svg';
+            }
+          }}
         />
       </div>
       <div className="space-y-3 sm:space-y-4">

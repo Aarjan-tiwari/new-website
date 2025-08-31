@@ -26,10 +26,16 @@ export default function ProjectCard({
     <Card className="overflow-hidden flex flex-col h-full">
       <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
         <img
-          src={image || "/placeholder.svg"}
+          src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}${image || "/placeholder.svg"}`}
           alt={title}
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
+          onError={(e) => {
+            // Fallback to placeholder if image fails to load
+            if (e.currentTarget.src !== '/placeholder.svg') {
+              e.currentTarget.src = '/placeholder.svg';
+            }
+          }}
         />
       </div>
       <CardContent className="p-3 sm:p-4 flex-grow">
