@@ -169,36 +169,6 @@ export default function Page() {
                 </ProjectDetailModal>
               </motion.div>
 
-              <motion.div
-                className="flex flex-col h-full"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-              >
-                <ProjectDetailModal
-                  title="Financial KPI Dashboard"
-                  description="Created interactive Power BI dashboards to visualize key financial metrics and business performance indicators for stakeholder reporting."
-                  image="/images/power-bi-dashboard.jpg"
-                  link="https://github.com/aarjan-tiwari"
-                  tags={["Power BI", "Data Visualization", "Financial Analysis", "DAX"]}
-                  details={[
-                    "Developed interactive dashboards to track and visualize key financial metrics",
-                    "Created custom DAX measures for complex financial calculations",
-                    "Implemented drill-down capabilities for detailed analysis of financial data",
-                    "Designed intuitive visualizations for executive reporting and decision-making",
-                    "Set up automated data refresh schedules for up-to-date reporting",
-                  ]}
-                >
-                  <ProjectCard
-                    title="Financial KPI Dashboard"
-                    description="Created interactive Power BI dashboards to visualize key financial metrics and business performance indicators for stakeholder reporting."
-                    image="/images/power-bi-dashboard.jpg"
-                    link="https://github.com/aarjan-tiwari"
-                    tags={["Power BI", "Data Visualization", "Financial Analysis", "DAX"]}
-                  />
-                </ProjectDetailModal>
-              </motion.div>
             </div>
           </div>
         </motion.section>
