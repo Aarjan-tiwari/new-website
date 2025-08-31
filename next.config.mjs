@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/new-website',
+  basePath: process.env.NODE_ENV === 'production' ? '/new-website' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/new-website/' : '',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -11,8 +12,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Optional: Add assetPrefix if you're using a custom domain
-  // assetPrefix: '/',
+  // Generate index.html in the root of the output directory
+  distDir: 'docs',
+  // Ensure the export includes an index.html in the root
+  trailingSlash: true,
 }
 
 export default nextConfig
