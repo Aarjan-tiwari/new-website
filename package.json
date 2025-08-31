@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
-    "start": "next start"
+    "export": "next build && next export -o docs && touch docs/.nojekyll",
+    "deploy": "npm run export && git add . && git commit -m 'Update build' && git push"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
