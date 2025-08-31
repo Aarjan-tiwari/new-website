@@ -25,13 +25,11 @@ export default function ProjectCard({
   return (
     <Card className="overflow-hidden flex flex-col h-full">
       <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-        <Image
+        <img
           src={image || "/placeholder.svg"}
           alt={title}
-          fill
-          className="object-cover transition-transform hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-          priority={title.includes("Pizza")} // Prioritize loading the first project image
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       <CardContent className="p-3 sm:p-4 flex-grow">

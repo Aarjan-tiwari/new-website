@@ -74,23 +74,21 @@ export default function EducationCertification() {
     label: cert.title.split(":")[0].split(" ").slice(0, 2).join(" "),
     content: (
       <div className="space-y-2 sm:space-y-3">
-        <div className="relative w-full h-0" style={{ paddingBottom: "75%" }}>
-          <Image
+        <div className="relative w-full">
+          <img
             src={cert.image || "/placeholder.svg"}
             alt={cert.title}
-            fill
-            className="object-contain absolute inset-0"
-            priority={cert.id === "databricks"}
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+            className="w-full h-auto max-h-[300px] object-contain mx-auto"
+            loading="lazy"
           />
-          <div
-            className="absolute inset-0 bg-black/5 opacity-0 hover:opacity-100 transition-opacity cursor-pointer flex items-center justify-center"
-            onClick={() => {
-              window.open(cert.image, "_blank")
-            }}
-          >
-            <span className="text-xs bg-black/70 text-white px-2 py-1 rounded-full">Click to view</span>
-          </div>
+        </div>
+        <div
+          className="absolute inset-0 bg-black/5 opacity-0 hover:opacity-100 transition-opacity cursor-pointer flex items-center justify-center"
+          onClick={() => {
+            window.open(cert.image, "_blank")
+          }}
+        >
+          <span className="text-xs bg-black/70 text-white px-2 py-1 rounded-full">Click to view</span>
         </div>
         <div className="space-y-1 sm:space-y-2">
           <h3 className="text-xs sm:text-sm font-semibold line-clamp-2">{cert.title}</h3>
@@ -140,12 +138,11 @@ export default function EducationCertification() {
                     <div className="mt-1 flex-shrink-0">
                       <div className="aspect-ratio-container" style={{ paddingBottom: "100%" }}>
                         <div className="relative w-full h-full overflow-hidden rounded-md border bg-white">
-                          <Image
+                          <img
                             src="/images/education/koi-logo.png"
                             alt="King's Own Institute logo"
-                            fill
-                            className="object-contain p-2"
-                            sizes="(max-width: 640px) 20vw, (max-width: 768px) 15vw, 64px"
+                            className="w-full h-full object-contain p-1"
+                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -171,12 +168,11 @@ export default function EducationCertification() {
                     <div className="mt-1 flex-shrink-0">
                       <div className="aspect-ratio-container" style={{ paddingBottom: "100%" }}>
                         <div className="relative w-full h-full overflow-hidden rounded-md border bg-white">
-                          <Image
+                          <img
                             src="/images/education/lumbini-logo.jpeg"
                             alt="Lumbini Banijya Campus logo"
-                            fill
-                            className="object-contain p-2"
-                            sizes="(max-width: 640px) 20vw, (max-width: 768px) 15vw, 64px"
+                            className="w-full h-full object-contain p-1"
+                            loading="lazy"
                           />
                         </div>
                       </div>

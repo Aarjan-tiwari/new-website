@@ -14,17 +14,14 @@ function ExperienceCard({ title, company, period, location, description, logo }:
   return (
     <Card className="mb-3 sm:mb-4">
       <CardHeader className="pb-1 sm:pb-2 px-4 pt-4 flex flex-row items-start gap-3">
-        <div className="flex-shrink-0">
-          <div className="aspect-ratio-container" style={{ paddingBottom: "100%", width: "3.5rem" }}>
-            <div className="relative w-full h-full overflow-hidden rounded-md border bg-white">
-              <Image
-                src={logo || "/placeholder.svg"}
-                alt={`${company} logo`}
-                fill
-                className="object-contain p-1.5"
-                sizes="(max-width: 640px) 15vw, (max-width: 768px) 10vw, 56px"
-              />
-            </div>
+        <div className="flex-shrink-0 w-14 h-14">
+          <div className="relative w-full h-full overflow-hidden rounded-md border bg-white p-1">
+            <img
+              src={logo || "/placeholder.svg"}
+              alt={`${company} logo`}
+              className="w-full h-full object-contain"
+              loading="lazy"
+            />
           </div>
         </div>
         <div className="flex-1">

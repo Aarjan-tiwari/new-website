@@ -46,12 +46,11 @@ export default function ProjectDetailModal({
           <DialogDescription className="text-xs sm:text-sm">{description}</DialogDescription>
         </DialogHeader>
         <div className="relative aspect-video w-full mt-2 sm:mt-4">
-          <Image
+          <img
             src={image || "/placeholder.svg"}
             alt={title}
-            fill
-            className="object-cover rounded-md"
-            sizes="(max-width: 640px) 100vw, 625px"
+            className="w-full h-full object-cover rounded-md"
+            loading="lazy"
           />
         </div>
         <div className="mt-3 sm:mt-4">

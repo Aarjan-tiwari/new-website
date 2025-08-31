@@ -8,15 +8,13 @@ export default function HeroSection() {
     <div className="flex flex-col items-center justify-center space-y-6 sm:space-y-8 text-center">
       <div
         className="relative aspect-ratio-container rounded-full overflow-hidden border-4 border-primary/20 shadow-lg"
-        style={{ width: "clamp(8rem, 25vw, 10rem)", paddingBottom: "clamp(8rem, 25vw, 10rem)" }}
+        style={{ width: "clamp(8rem, 25vw, 10rem)", height: "clamp(8rem, 25vw, 10rem)" }}
       >
-        <Image
+        <img
           src="/images/hero-bg.jpg"
           alt="Aarjan Tiwari"
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 640px) 25vw, 10rem"
+          className="w-full h-full object-cover"
+          loading="eager"
         />
       </div>
       <div className="space-y-3 sm:space-y-4">

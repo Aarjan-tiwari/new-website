@@ -12,8 +12,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Ensure the export includes an index.html in the root
-  trailingSlash: true
-}
+  trailingSlash: true,
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
+};
 
-export default nextConfig
+export default nextConfig;
