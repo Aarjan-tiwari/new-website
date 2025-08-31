@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run generate-favicon && next build",
     "start": "next start",
     "lint": "next lint",
     "export": "echo 'Using output: export; no separate next export step'",
-    "deploy": "npm run export && git add . && git commit -m 'Update build' && git push"
+    "deploy": "npm run export && git add . && git commit -m 'Update build' && git push",
+    "generate-favicon": "node scripts/generate-favicon.js"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Aarjan Tiwari" }],
   creator: "Aarjan Tiwari",
   publisher: "Aarjan Tiwari",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+  },
   formatDetection: {
     email: false,
     address: false,
