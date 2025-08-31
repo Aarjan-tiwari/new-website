@@ -15,9 +15,11 @@ export default function HeroSection() {
             className="w-full h-full object-cover object-top"
             loading="eager"
             onError={(e) => {
-              // Fallback to placeholder if image fails to load
-              if (e.currentTarget.src !== '/placeholder.svg') {
-                e.currentTarget.src = '/placeholder.svg';
+              // Fallback to placeholder if image fails to load (basePath-aware)
+              const base = process.env.NODE_ENV === 'production' ? '/new-website' : ''
+              const fallback = `${base}/placeholder-user.jpg`
+              if (!e.currentTarget.src.endsWith('placeholder-user.jpg')) {
+                e.currentTarget.src = fallback
               }
             }}
           />
