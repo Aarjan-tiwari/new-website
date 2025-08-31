@@ -142,7 +142,7 @@ export default function EducationCertification() {
                 >
                   <div className="flex gap-4">
                     <div className="mt-1 flex-shrink-0">
-                      <div className="aspect-ratio-container" style={{ paddingBottom: "100%" }}>
+                      <div className="aspect-square">
                         <div className="relative w-full h-full overflow-hidden rounded-md border bg-white">
                           <img
                             src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/education/koi-logo.png`}
@@ -178,7 +178,7 @@ export default function EducationCertification() {
                 >
                   <div className="flex gap-4">
                     <div className="mt-1 flex-shrink-0">
-                      <div className="aspect-ratio-container" style={{ paddingBottom: "100%" }}>
+                      <div className="aspect-square">
                         <div className="relative w-full h-full overflow-hidden rounded-md border bg-white">
                           <img
                             src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/education/lumbini-logo.jpeg`}
@@ -219,20 +219,26 @@ export default function EducationCertification() {
               <CardContent className="px-0">
                 <ul className="space-y-4">
                   {certifications.map((cert, index) => (
-                    <motion.li
+                    <li
                       key={cert.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 + index * 0.1 }}
-                      className="group"
+                      className={`group w-full text-left p-3 rounded-md transition-all cursor-pointer outline-none ${
+                        selectedCert.id === cert.id
+                          ? "bg-primary/10 border-l-2 border-primary"
+                          : "hover:bg-muted/50 border-l-2 border-transparent"
+                      }`}
+                      tabIndex={0}
+                      onClick={() => setSelectedCert(cert)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setSelectedCert(cert);
+                        }
+                      }}
                     >
-                      <button
-                        onClick={() => setSelectedCert(cert)}
-                        className={`w-full text-left p-3 rounded-md transition-all ${
-                          selectedCert.id === cert.id
-                            ? "bg-primary/10 border-l-2 border-primary"
-                            : "hover:bg-muted/50 border-l-2 border-transparent"
-                        }`}
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 + index * 0.1 }}
                       >
                         <div className="flex justify-between items-start">
                           <div>
@@ -246,8 +252,8 @@ export default function EducationCertification() {
                             {cert.date.split(" ")[0]}
                           </Badge>
                         </div>
-                      </button>
-                    </motion.li>
+                      </motion.div>
+                    </li>
                   ))}
                 </ul>
               </CardContent>

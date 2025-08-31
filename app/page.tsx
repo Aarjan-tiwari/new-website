@@ -141,25 +141,30 @@ export default function Page() {
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
                 <ProjectDetailModal
-                  title="Databricks ETL Pipeline"
-                  description="Designed and implemented data pipelines using Databricks to process financial data, enabling efficient analysis and reporting for decision-making."
-                  image="/images/databricks-pipeline.jpg"
+                  title="Amazon Web Scraper Project – Complete Detailed Explanation"
+                  description="Python-based automation that scrapes Amazon product pages to monitor prices in real time, storing a historical CSV for trend analysis and decision-making."
+                  image="/images/hero-bg.jpg"
                   link="https://github.com/aarjan-tiwari"
-                  tags={["Databricks", "ETL", "Data Engineering", "PySpark"]}
+                  tags={["Python", "Web Scraping", "BeautifulSoup", "Requests", "Pandas", "Automation", "CSV"]}
                   details={[
-                    "Built end-to-end ETL pipelines using Databricks and PySpark for financial data processing",
-                    "Implemented data transformation logic to clean, normalize, and prepare data for analysis",
-                    "Created automated workflows for regular data updates and processing",
-                    "Optimized query performance for large datasets using Spark SQL",
-                    "Integrated with various data sources and destinations for comprehensive data processing",
+                    "Overview: A robust price tracker that visits Amazon product pages, extracts title/price/date, and appends to a CSV for historical analysis.",
+                    "Core Capabilities: Track price trends, detect drops/increases, identify best time to buy, and build datasets for BI/ML.",
+                    "Architecture: Jupyter notebook for exploration plus a production-ready class-based script (amazon_scraper.py) and example usages.",
+                    "Scraping Stack: requests for HTTP with realistic headers; BeautifulSoup for HTML parsing; defensive parsing with fallbacks.",
+                    "Data Handling: Cleans and standardizes price formats; UTF-8 CSV storage with header creation and safe appends.",
+                    "Continuous Monitoring: Configurable loop with delays for rate limiting; resilient error handling for network/HTML changes.",
+                    "Analysis: Example pandas workflows for computing statistics and exploring price trends over time.",
+                    "Extensibility: Multiple product support by instantiating multiple scraper objects; adjustable monitoring intervals.",
+                    "A11y & Ethics: Respectful rate limiting; acknowledges ToS/robots.txt considerations; intended for educational/personal use.",
+                    "Future Work: Email/SMS alerts, dashboards, visualizations, database storage, APIs, and ML-based price predictions.",
                   ]}
                 >
                   <ProjectCard
-                    title="Databricks ETL Pipeline"
-                    description="Designed and implemented data pipelines using Databricks to process financial data, enabling efficient analysis and reporting for decision-making."
-                    image="/images/databricks-pipeline.jpg"
+                    title="Amazon Web Scraper Project"
+                    description="Scrapes Amazon product details and maintains a historical price CSV for analysis, alerts, and research."
+                    image="/images/hero-bg.jpg"
                     link="https://github.com/aarjan-tiwari"
-                    tags={["Databricks", "ETL", "Data Engineering", "PySpark"]}
+                    tags={["Python", "Web Scraping", "BeautifulSoup", "Requests", "Pandas", "Automation", "CSV"]}
                   />
                 </ProjectDetailModal>
               </motion.div>

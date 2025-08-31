@@ -24,7 +24,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <Card className="overflow-hidden flex flex-col h-full">
-      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+      <div className="relative w-full pb-[56.25%]">
         <img
           src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}${image || "/placeholder.svg"}`}
           alt={title}

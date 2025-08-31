@@ -7,8 +7,7 @@ export default function HeroSection() {
   return (
     <div className="flex flex-col items-center justify-center space-y-6 sm:space-y-8 text-center">
       <div
-        className="relative aspect-ratio-container rounded-full overflow-hidden border-4 border-primary/20 shadow-lg"
-        style={{ width: "clamp(8rem, 25vw, 10rem)", height: "clamp(8rem, 25vw, 10rem)" }}
+        className="relative aspect-ratio-container rounded-full overflow-hidden border-4 border-primary/20 shadow-lg w-[clamp(8rem,25vw,10rem)] h-[clamp(8rem,25vw,10rem)]"
       >
         <img
           src={`${process.env.NODE_ENV === 'production' ? '/new-website' : ''}/images/hero-bg.jpg`}
